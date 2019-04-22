@@ -4,8 +4,8 @@
  * [Docker]
 
 ## Changelog
- * 20190422 - Update apline to v3.9.3
- * 20190311 - Update apline to v3.9.2
+ * 20190422 - Update alpine to v3.9.3
+ * 20190311 - Update alpine to v3.9.2
 
 ## Run the example
 `docker build -t docker_selenium_example .`
