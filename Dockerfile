@@ -1,4 +1,4 @@
-FROM alpine:3.9.3
+FROM alpine:3.9.4
 MAINTAINER twright <spartas@gmail.com>
 RUN apk update && apk upgrade
 

@@ -10,6 +10,10 @@ DEBUG = True
 
 initialUrl = 'https://www.example.com'
 
+def Test(str_arg):
+  print(str_arg)
+  return
+
 options = webdriver.ChromeOptions()
 options.binary_location = '/usr/bin/chromium-browser'
 options.headless = True
