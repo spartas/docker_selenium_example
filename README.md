@@ -4,13 +4,12 @@
  * [Docker]
 
 ## Changelog
+ * 20190513 - Update alpine to v3.9.4; Use `Makefile` for testing
  * 20190422 - Update alpine to v3.9.3
  * 20190311 - Update alpine to v3.9.2
 
 ## Run the example
-`docker build -t docker_selenium_example .`
-
-`docker run -it docker_selenium_example`
+`make test`
 
 ### AWS Deployment (aws\_deploy.sh)
  * [AWS Command-line interface]
