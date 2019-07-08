@@ -20,7 +20,7 @@ options.headless = True
 options.add_argument('window-size=1200x600')
 options.add_argument('no-sandbox')
 
-browser = webdriver.Chrome(chrome_options=options)
+browser = webdriver.Chrome(options=options)
 browser.implicitly_wait(20)
 browser.get(initialUrl)
 

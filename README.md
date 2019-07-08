@@ -4,6 +4,7 @@
  * [Docker]
 
 ## Changelog
+ * 20190708 - Update alpine to v3.10.0
  * 20190513 - Update alpine to v3.9.4; Use `Makefile` for testing
  * 20190422 - Update alpine to v3.9.3
  * 20190311 - Update alpine to v3.9.2
