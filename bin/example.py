@@ -5,8 +5,9 @@ from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
+import sys
 
-DEBUG = True
+DEBUG = False
 
 initialUrl = 'https://www.example.com'
 
@@ -30,6 +31,24 @@ browser.close()
 
 soup = BeautifulSoup(str_src, 'html.parser')
 
+p_soup = soup.prettify()
 if 'DEBUG' in globals().keys() and globals()['DEBUG']:
-  print(soup.prettify())
+  print('--- Actual result ---')
+  print(p_soup)
+  print('---')
+
+with open('tests/example.com.html', 'r') as src_file:
+  src_html = src_file.read().rstrip('\n')
+
+if 'DEBUG' in globals().keys() and globals()['DEBUG']:
+  print(src_html)
+  print('---')
+  print()
+  print('--- Expected result ---')
+
+if src_html == p_soup:
+  print("PASSED")
+else:
+  print("FAILED!")
+  sys.exit(1)
 
