@@ -1,4 +1,4 @@
-FROM alpine:3.10.1
+FROM alpine:3.10.2
 MAINTAINER twright <spartas@gmail.com>
 RUN apk update && apk upgrade && apk add python3 chromium chromium-chromedriver && rm -rf /var/cache/*
 

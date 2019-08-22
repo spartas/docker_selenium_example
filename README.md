@@ -14,8 +14,6 @@
 `make test`
 
 ### AWS Deployment (aws\_deploy.sh)
- * [AWS Command-line interface]
- * [jq]
 
 aws\_deploy.sh will set up the necessary role permissions, push the docker 
 image to AWS Container registry service. It will then launch an EC2 
@@ -26,6 +24,11 @@ Finally, it will create an AMI (and snaphot) of the running instance,
 create a launch template, and delete the running instance.
 
 A fresh instance can be run at any time by running the launch template.
+
+#### Requirements
+ * [AWS Command-line interface]
+ * [jq]
+
 
 #### Deploy to AWS
 
