@@ -6,6 +6,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import sys
+import difflib
 
 DEBUG = False
 
@@ -41,10 +42,9 @@ with open('tests/example.com.html', 'r') as src_file:
   src_html = src_file.read().rstrip('\n')
 
 if 'DEBUG' in globals().keys() and globals()['DEBUG']:
-  print(src_html)
+  print("DIFF")
   print('---')
-  print()
-  print('--- Expected result ---')
+  [ print(line) for line in difflib.unified_diff(src_html.split("\n"), p_soup.split("\n"), lineterm="", fromfile="expected.html", tofile="actual.html") ]
 
 if src_html == p_soup:
   print("PASSED")

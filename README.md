@@ -4,6 +4,7 @@
  * [Docker]
 
 ## Changelog
+ * 20191104 - Update alpine to v3.10.3; Fix example test; diff test output
  * 20190822 - Update alpine to v3.10.2
  * 20190717 - Update alpine to v3.10.1; Support `make shell`; improve tests
  * 20190708 - Update alpine to v3.10.0
