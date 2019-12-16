@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
 import json
-from selenium import webdriver
-from selenium.webdriver import ActionChains
-from selenium.webdriver.common.keys import Keys
+import requests
 from bs4 import BeautifulSoup
 import sys
 import difflib
@@ -16,21 +14,8 @@ def Test(str_arg):
   print(str_arg)
   return
 
-options = webdriver.ChromeOptions()
-options.binary_location = '/usr/bin/chromium-browser'
-options.headless = True
-options.add_argument('window-size=1200x600')
-options.add_argument('no-sandbox')
-
-browser = webdriver.Chrome(options=options)
-browser.implicitly_wait(20)
-browser.get(initialUrl)
-
-str_src = browser.page_source
-
-browser.close()
-
-soup = BeautifulSoup(str_src, 'html.parser')
+r = requests.get(initialUrl)
+soup = BeautifulSoup(r.text, 'html.parser')
 
 p_soup = soup.prettify()
 if 'DEBUG' in globals().keys() and globals()['DEBUG']:
@@ -39,7 +24,7 @@ if 'DEBUG' in globals().keys() and globals()['DEBUG']:
   print('---')
 
 with open('tests/example.com.html', 'r') as src_file:
-  src_html = src_file.read().rstrip('\n')
+  src_html = src_file.read()
 
 if 'DEBUG' in globals().keys() and globals()['DEBUG']:
   print("DIFF")

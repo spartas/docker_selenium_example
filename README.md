@@ -4,6 +4,8 @@
  * [Docker]
 
 ## Changelog
+ * 20191216 - Use a "distroless" image. No longer alpine-based, and not 
+ dependent on Chrome. Fix example test once again.
  * 20191104 - Update alpine to v3.10.3; Fix example test; diff test output
  * 20190822 - Update alpine to v3.10.2
  * 20190717 - Update alpine to v3.10.1; Support `make shell`; improve tests
